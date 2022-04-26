@@ -15,13 +15,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function createDreamTeam(members) {
   let newArr = [];
+  let result = [];
+  if(members == null){
+    return false;
+  }
   for (let i=0; i < members.length; i++){
-    console.log(typeof members[i]);
     if(typeof members[i] == 'string'){
-      newArr.push(members[i]);
+      newArr.push(members[i].toUpperCase().trim());
     }
   }
-  return newArr;
+
+  newArr = newArr.sort();
+  for(let i=0; i < newArr.length; i++){
+    if(newArr[i][0] != ' '){
+      result.push(newArr[i][0]);
+    }
+  }
+  return result.join('');
 }
 
 module.exports = {
