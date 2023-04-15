@@ -36,7 +36,8 @@ class VigenereCipheringMachine {
   }
 }
 
-};
 
-VigenereCipheringMachine
+
 module.exports = {
+  VigenereCipheringMachine
+}
